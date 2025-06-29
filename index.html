@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Climaire Mechanical Inc. | HVAC Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -38,13 +38,18 @@
             transform-style: preserve-3d;
             transition: all 0.5s ease;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            will-change: transform;
         }
         
         .card-3d:hover {
             transform: translateY(-10px) rotateY(5deg) rotateX(2deg);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        
+        @media (hover: none) {
+          .card-3d:hover {
+            transform: none;
+          }
+        }        
         .service-card {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             border-radius: 12px;
@@ -364,12 +369,10 @@ When reliability, integrity, and craftsmanship matter—<strong>Climaire Mechani
                         <span class="text-gray-700 font-medium">Satisfaction Guaranteed</span>
                     </div>
                 </div>
-                <div class="relative z-10">
                   <a href="learn.html"
-                     class="btn-primary text-white font-bold py-3 px-8 rounded-lg inline-block pointer-events-auto">
-                    Learn More
-                  </a>
-                </div>
+                       class="btn-primary text-white font-bold py-3 px-8 rounded-lg inline-block relative z-20 pointer-events-auto">
+                      Learn More
+                </a>
             </div>
         </section>
 
