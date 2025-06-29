@@ -202,9 +202,20 @@
                 grid-template-columns: 1fr;
             }
         }
+        @keyframes marquee {
+          0%   { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+        
+        .animate-marquee {
+          display: inline-block;
+          min-width: 100%;
+          animation: marquee 20s linear infinite;
+        }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white shadow-sm">
         <div class="container mx-auto px-6 py-4">
@@ -230,6 +241,16 @@
         </div>
     </nav>
 
+        <!-- Emergency Ticker -->
+    <div class="bg-red-600 overflow-hidden whitespace-nowrap fixed top-0 w-full z-50">
+      <div class="animate-marquee text-white text-sm md:text-base font-semibold py-2 px-4 inline-block">
+        🚨 Emergency HVAC Service Available 24/7 – Call Now: (656) 565-8592 &nbsp;&nbsp;&nbsp;&nbsp;
+        🚨 Serving New Mexico and Colorado – Fast Response! &nbsp;&nbsp;&nbsp;&nbsp;
+        🚨 Licensed & Insured Technicians on Standby!
+        🚨 Services Calls Only!
+      </div>
+    </div>
+    
     <!-- Main Content with Z-Pattern Layout -->
     <main class="z-pattern container mx-auto px-6 pt-32 pb-12">
         <!-- Hero Section -->
